@@ -1,0 +1,5 @@
+name: Error log jira
+description: "Inserts the Watchdog log messages in jira, as jira issues."
+type: module
+package: Other
+core: 8.x

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Implements hook_menu()
+ */
+function error_log_jira_menu() {
+  return array(
+    'admin/content/error_log_jira' => array(
+      'title' => 'Error log jira settings',
+      'route_name' => 'error_log_jira_list',
+    ),
+  );
+}
+
+/**
+ * Implements hook_permission()
+ */
+function error_log_jira_permission() {
+  return array(
+    'administer error log jira' => array(
+      'title' => t('Manage error log jira form submissions'),),
+  );
+}
+

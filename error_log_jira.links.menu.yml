@@ -1,0 +1,4 @@
+error_log_jira_list:
+  title: Error log jira
+  route_name: error_log_jira_list
+  base_route: system.admin_content

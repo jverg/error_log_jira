@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Creates in the database the error_log_jira table.
+ *
+ * A module that takes the log messages from watchdog and send them as
+ * issues to jira.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function error_log_jira_schema() {
+  $schema['error_log_jira'] = array(
+    'fields' => array(
+      'wid' => array(
+        'description' => 'Primary Key: Unique watchdog event ID.',
+        'type'        => 'int',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+      ),
+      'message' => array(
+        'description' => 'Serialized array of variables that match the message
+                          string and that is passed into the t() function.',
+        'type'        => 'text',
+        'not null'    => TRUE,
+      ),
+      'resolution' => array(
+        'description' => 'The resolution of the jira issues.',
+        'type'        => 'text',
+        'not null'    => TRUE,
+        'length'      => 16,
+      ),
+      'timestamp' => array(
+        'description' => 'Unix timestamp of when event occurred.',
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'length'      => 10,
+      ),
+      'resolution_updated' => array(
+        'description' => 'The timestamp when the resolution has been updated.',
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'length'      => 10,
+      ),
+    ),
+    'primary key' => array('wid'),
+    'index'       => array('timestamp'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function error_log_jira_uninstall() {
+
+  // Uninstall the error_log_jira table from the database.
+  drupal_uninstall_schema('error_log_jira');
+
+  // Deletes all the values that had created on the database table 'variable'.
+  variable_del('error_log_jira_key');
+  variable_del('error_log_jira_number_select');
+  variable_del('error_log_jira_severity_levels');
+}
