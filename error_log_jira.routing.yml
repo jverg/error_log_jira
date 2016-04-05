@@ -1,14 +1,6 @@
-error_log_jira_list:
-  path: '/admin/content/error_log_jira'
+error_log_jira.list:
+  path: 'error_log_jira'
   defaults:
-    _controller: '\Drupal\error_log_jira\Controller\AddForm::buildForm'
-  requirements:
-    _permission: 'administer error log jira'
-
-error_log_jira_add:
-  path: '/admin/content/error_log_jira/add'
-  defaults:
-    _form: '\Drupal\error_log_jira\AddForm'
-    _title: 'Create contact'
+    _form: '\Drupal\error_log_jira\Controller\AddForm'
   requirements:
     _permission: 'administer error log jira'
