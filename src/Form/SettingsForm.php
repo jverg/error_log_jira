@@ -53,7 +53,6 @@ class SettingsForm extends ConfigFormBase {
       '10' => '10',
       '25' => '25',
     );
-
     $form['number_select'] = array(
       '#type'          => 'select',
       '#title'         => $this->t('Number of items to be checked.'),

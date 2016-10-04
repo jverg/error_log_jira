@@ -1,5 +1,5 @@
 error_log_jira.settings.form:
-  path: '/admin/config/error_log_jira/settings'
+  path: '/admin/config/development/error_log_jira'
   defaults:
     _form: '\Drupal\error_log_jira\Form\SettingsForm'
     _title: 'Error log jira settings'
