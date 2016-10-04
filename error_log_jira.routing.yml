@@ -1,6 +1,9 @@
-error_log_jira.list:
-  path: 'error_log_jira'
+error_log_jira.settings.form:
+  path: '/admin/config/error_log_jira/settings'
   defaults:
-    _form: '\Drupal\error_log_jira\Controller\AddForm'
+    _form: '\Drupal\error_log_jira\Form\SettingsForm'
+    _title: 'Error log jira settings'
   requirements:
-    _permission: 'administer error log jira'
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

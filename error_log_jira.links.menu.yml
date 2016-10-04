@@ -1,4 +1,6 @@
-error_log_jira.list:
-  title: Error log jira
-  route_name: error_log_jira.list
-  base_route: system.admin_structure
+error_log_jira.settings_form:
+  title: 'SettingsForm
+  route_name: error_log_jira.settings_form
+  description: 'Error log jira'
+  parent: system.admin_config_system
+  weight: 99
